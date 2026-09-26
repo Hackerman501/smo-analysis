@@ -1,0 +1,168 @@
+name: Analyze SMO main
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install analysis libraries
+        run: python -m pip install capstone lz4
+
+      - name: Analyze NSO
+        shell: bash
+        run: |
+          python <<'PY'
+          import hashlib
+          import re
+          import struct
+          from pathlib import Path
+
+          import lz4.block
+          from capstone import Cs, CS_ARCH_ARM64, CS_MODE_LITTLE_ENDIAN
+
+          root = Path("main")
+          out = Path("analysis")
+          out.mkdir(exist_ok=True)
+
+          blob = root.read_bytes()
+          if blob[:4] != b"NSO0":
+              raise SystemExit("main is not an NSO (missing NSO0 magic)")
+
+          def u32(o):
+              return struct.unpack_from("<I", blob, o)[0]
+
+          version = u32(0x04)
+          flags = u32(0x08)
+
+          text_file = u32(0x0C)
+          text_mem = u32(0x10)
+          text_size = u32(0x14)
+
+          ro_file = u32(0x18)
+          ro_mem = u32(0x1C)
+          ro_size = u32(0x20)
+
+          data_file = u32(0x24)
+          data_mem = u32(0x28)
+          data_size = u32(0x2C)
+
+          text_comp = u32(0x60)
+          ro_comp = u32(0x64)
+          data_comp = u32(0x68)
+
+          def segment(file_off, comp_size, dec_size, compressed):
+              raw = blob[file_off:file_off + comp_size]
+              if compressed:
+                  return lz4.block.decompress(raw, uncompressed_size=dec_size)
+              if len(raw) < dec_size:
+                  raise ValueError("short uncompressed segment")
+              return raw[:dec_size]
+
+          text = segment(text_file, text_comp, text_size, bool(flags & 1))
+          rodata = segment(ro_file, ro_comp, ro_size, bool(flags & 2))
+          data = segment(data_file, data_comp, data_size, bool(flags & 4))
+
+          build_candidates = []
+          for off in (0x40, 0x50, 0x60, 0x70, 0x80):
+              chunk = blob[off:off+0x20]
+              if len(chunk) == 0x20:
+                  build_candidates.append((off, chunk.hex()))
+
+          lines = [
+              "SMO 1.3.0 main NSO analysis",
+              f"file_size=0x{len(blob):X} ({len(blob)} bytes)",
+              f"sha256={hashlib.sha256(blob).hexdigest()}",
+              f"version=0x{version:X}",
+              f"flags=0x{flags:X}",
+              f"text_file=0x{text_file:X} text_mem=0x{text_mem:X} text_size=0x{text_size:X} compressed=0x{text_comp:X}",
+              f"rodata_file=0x{ro_file:X} rodata_mem=0x{ro_mem:X} rodata_size=0x{ro_size:X} compressed=0x{ro_comp:X}",
+              f"data_file=0x{data_file:X} data_mem=0x{data_mem:X} data_size=0x{data_size:X} compressed=0x{data_comp:X}",
+              "",
+              "20-byte/32-byte header candidates:",
+          ]
+          lines += [f"0x{off:02X}: {hexv}" for off, hexv in build_candidates]
+          (out / "header.txt").write_text("\n".join(lines), encoding="utf-8")
+
+          strings = []
+          for name, buf, base in [("text", text, text_mem), ("rodata", rodata, ro_mem), ("data", data, data_mem)]:
+              for m in re.finditer(rb"[ -~]{6,}", buf):
+                  s = m.group().decode("ascii", "replace")
+                  strings.append((base + m.start(), name, s))
+          strings.sort()
+          (out / "strings.txt").write_text(
+              "\n".join(f"0x{addr:016X} [{seg}] {s}" for addr, seg, s in strings),
+              encoding="utf-8"
+          )
+
+          keywords = re.compile(r"(joy.?con|pro.?controller|controller|motion|throw|cappy|cap.?throw|npad|gyro|shake|input|down|up.?throw)", re.I)
+          relevant = [x for x in strings if keywords.search(x[2])]
+          (out / "relevant_strings.txt").write_text(
+              "\n".join(f"0x{addr:016X} [{seg}] {s}" for addr, seg, s in relevant),
+              encoding="utf-8"
+          )
+
+          md = Cs(CS_ARCH_ARM64, CS_MODE_LITTLE_ENDIAN)
+          md.detail = True
+          insns = list(md.disasm(text, text_mem))
+
+          # Dump only instructions that directly reference addresses in the
+          # rodata/data regions, plus a small surrounding window.
+          refs = set()
+          for i, ins in enumerate(insns):
+              if ins.mnemonic in {"adr", "adrp"}:
+                  for op in ins.operands:
+                      if op.type == 1 and hasattr(op, "imm"):
+                          target = op.imm
+                          if ro_mem <= target < ro_mem + len(rodata):
+                              refs.add(i)
+              if ins.mnemonic in {"ldr", "ldrsw", "str", "add", "sub"}:
+                  for op in ins.operands:
+                      if op.type == 3 and hasattr(op.mem, "disp"):
+                          disp = op.mem.disp
+                          if abs(disp) < 0x200000:
+                              refs.add(i)
+
+          interesting_terms = []
+          for i in sorted(refs):
+              ins = insns[i]
+              start = max(0, i-4)
+              end = min(len(insns), i+5)
+              block = "\n".join(f"0x{x.address:016X}: {x.mnemonic:<8} {x.op_str}" for x in insns[start:end])
+              if any(re.search(r"(joy|controller|motion|throw|cappy|npad|gyro|input)", line, re.I) for line in block.splitlines()):
+                  interesting_terms.append(block)
+
+          (out / "candidate_disassembly.txt").write_text(
+              "\n\n".join(interesting_terms[:500]),
+              encoding="utf-8"
+          )
+
+          # Store extracted segments for optional local reproduction without
+          # committing Nintendo's executable itself anywhere.
+          (out / "text.bin").write_bytes(text)
+          (out / "rodata.bin").write_bytes(rodata)
+
+          print("\n".join(lines))
+          print(f"relevant_strings={len(relevant)}")
+          print(f"instructions={len(insns)}")
+          PY
+
+      - name: Upload analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: smo-main-analysis
+          path: analysis/
+          if-no-files-found: error
