@@ -7,7 +7,7 @@ This directory contains the human-readable source for the Pro Controller Downthr
 - Game: Super Mario Odyssey
 - Title ID: `0100000000010000`
 - Version: `1.3.0`
-- Build ID: `B424BE150A8E7D78701CBE7A439D9EBF`
+- Build ID: `B424BE150A8E7D78`
 
 ## Patch logic
 
@@ -41,4 +41,4 @@ This makes the existing motion detector used by other motion throws handle the D
 
 The source contains only the patch logic and addresses. It does not include Nintendo's original executable or a full decompilation of the game.
 
-The addresses are specific to Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78701CBE7A439D9EBF`.
+The addresses are specific to Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78`.
