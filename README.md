@@ -2,7 +2,6 @@
 
 A patch that enables Downthrows and Up-Down-Vaults with a Pro Controller in Super Mario Odyssey.
 
-
 Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects that trigger to the same single/any-hand swing detector used by other motion throws.
 
 ## Downloads
@@ -10,10 +9,9 @@ Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cann
 **[Download the latest release](https://github.com/Hackerman501/smo-downthrow-patch/releases/latest)**
 
 - **exeFS** — automatic, not version-specific
-- **EdiZon** — runtime toggle, currently for SMO 1.3.0 
-!!!The EdiZon Cheat option is really unstable ATM, crashes are expected!!!
+- **EdiZon** — runtime toggle, currently for SMO 1.3.0
 
-
+> **Warning:** The EdiZon cheat is experimental and can cause crashes or a black screen. Enable it only after the game has fully loaded.
 
 ## exeFS patch
 
@@ -30,8 +28,6 @@ atmosphere/exefs_patches/ProControllerDownthrow/
 
 ## EdiZon cheat
 
-!!!The EdiZon Cheat option is really unstable ATM, crashes are expected!!!
-
 For Super Mario Odyssey 1.3.0:
 
 ```text
@@ -41,7 +37,15 @@ For Super Mario Odyssey 1.3.0:
 
 Build ID: `B424BE150A8E7D78`
 
-Enable the cheat after the game has loaded. Enabling it during startup can cause a black screen or crash.
+### Installation
+
+Place the cheat file at:
+
+```text
+atmosphere/contents/0100000000010000/cheats/B424BE150A8E7D78.txt
+```
+
+The latest release includes the EdiZon cheat in the correct folder structure, so you can also extract the EdiZon ZIP to the root of your SD card.
 
 ### EdiZon setup
 
@@ -78,7 +82,10 @@ The readable source for the patch is available in [`source/`](./source/), includ
 - exeFS patch: not version-specific
 - EdiZon cheat: Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78`
 
-Known side effect: some Dual Joy-Con motion actions can also work with a single Joy-Con.
+## Known issues
+
+- The EdiZon cheat is experimental and can cause crashes or a black screen, especially if enabled before the game has fully loaded.
+- Some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
 ## Which method?
 
