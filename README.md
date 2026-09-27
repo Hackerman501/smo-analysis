@@ -1,20 +1,80 @@
 # Super Mario Odyssey Pro Controller Downthrow
 
-I made a patch that enables Downthrows with a Pro Controller in Super Mario Odyssey 1.3.0.
+A patch that enables Downthrows with a Pro Controller in Super Mario Odyssey 1.3.0.
 
-Normally, the Pro Controller can perform the regular motion throws, but the Downthrow used for things like Up-Down-Vaults does not work because Odyssey routes that particular action through a Double-Hand motion check.
+Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects it to the same single-hand motion check used by other motion throws.
 
-Instead of faking a second Six-Axis sensor, this patch redirects that specific trigger to the same single-hand motion check that the game already uses for other motion throws.
+With the patch enabled, you can:
 
-So with the patch enabled, you can:
-• Use a Pro Controller for Downthrows
-• Perform an Up-Down-Vault using a Pro Controller
-• Keep the normal motion-throw behavior
-• Use the controller's existing motion sensor without emulating a second sensor
+- Use Pro Controller Downthrows
+- Perform Up-Down-Vaults with a Pro Controller
+- Keep normal motion-throw behavior
 
-There is one known side effect: with Joy-Cons, some actions that normally require motion input from both controllers can be triggered with a single Joy-Con.
+Known side effect: some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
-The patch was tested on Super Mario Odyssey 1.3.0.
+Tested on Super Mario Odyssey 1.3.0.
 
-Installation:
-`atmosphere/exefs_patches/ProControllerDownthrow/`
+## exefs patch
+
+Install to:
+
+```text
+atmosphere/exefs_patches/ProControllerDownthrow/
+```
+
+**Pros:** Always active, no EdiZon required.  
+**Cons:** Always active and version-specific.
+
+## EdiZon cheat
+
+For SMO 1.3.0:
+
+```text
+[SMO Pro Controller Downthrow]
+04000000 003EFE94 140798AB
+```
+
+Build ID: `B424BE150A8E7D78`
+
+**Pros:** Can be toggled at runtime and is useful for testing.  
+**Cons:** Requires EdiZon and should be enabled after the game has loaded.
+
+### EdiZon setup
+
+The required Atmosphère configuration files are located in:
+
+```text
+atmosphere/config_templates/
+```
+
+Edit these files directly:
+
+```text
+atmosphere/config_templates/system_settings.ini
+atmosphere/config_templates/override_config.ini
+```
+
+In `system_settings.ini`:
+
+```ini
+[atmosphere]
+dmnt_cheats_enabled_by_default = u8!0x0
+dmnt_always_save_cheat_toggles = u8!0x0
+```
+
+In `override_config.ini`:
+
+```ini
+[default_config]
+cheat_enable_key=L
+```
+
+The cheat should be enabled through EdiZon after Super Mario Odyssey has loaded.
+
+Enabling this cheat during SMO's startup can cause a black screen or crash.
+
+## Which method?
+
+Use the **exefs patch** for automatic use.
+
+Use the **EdiZon cheat** when you want to toggle the modification manually.
