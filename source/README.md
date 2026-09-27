@@ -1,6 +1,6 @@
 # Source
 
-This directory contains the human-readable source for the **v5 Pro Controller Downthrow patch**.
+This directory contains the human-readable source for the Pro Controller Downthrow patch.
 
 ## Target
 
@@ -15,7 +15,7 @@ Super Mario Odyssey normally routes the special Cappy Downthrow trigger through 
 
 The Pro Controller does not provide the same two-hand motion state, so that path does not trigger reliably.
 
-v5 redirects the branch at `0x003EFE94` to the already working any-hand swing path at `0x005D6140`.
+The patch redirects the branch at `0x003EFE94` to the already working any-hand swing path at `0x005D6140`.
 
 Original:
 
@@ -23,7 +23,7 @@ Original:
 0x003EFE94: 140798C7    // b 0x005D61B0
 ```
 
-v5:
+Patched:
 
 ```asm
 0x003EFE94: 140798AB    // b 0x005D6140
