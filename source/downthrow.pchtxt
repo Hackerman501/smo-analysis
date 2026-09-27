@@ -3,7 +3,7 @@
 @flag offset_shift 0x100
 @enabled
 
-; Pro Controller Downthrow v5
+; Pro Controller Downthrow
 ; 0x003EFE94: b 0x005D6140
 003EFE94 140798AB
 
