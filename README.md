@@ -1,6 +1,6 @@
 # Super Mario Odyssey Pro Controller Downthrow
 
-A patch that enables Downthrows with a Pro Controller in Super Mario Odyssey 1.3.0.
+A patch that enables Downthrows with a Pro Controller in Super Mario Odyssey.
 
 Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects it to the same single-hand motion check used by other motion throws.
 
@@ -12,18 +12,18 @@ With the patch enabled, you can:
 
 Known side effect: some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
-Tested on Super Mario Odyssey 1.3.0.
-
 ## exefs patch
 
-Install to:
+The exefs patch is provided as a `.ips` file.
+
+Install it to:
 
 ```text
 atmosphere/exefs_patches/ProControllerDownthrow/
 ```
 
-**Pros:** Always active, no EdiZon required.  
-**Cons:** Always active and version-specific.
+**Pros:** Always active, no EdiZon required, not version-specific.  
+**Cons:** Always active while installed.
 
 ## EdiZon cheat
 
@@ -37,7 +37,7 @@ For SMO 1.3.0:
 Build ID: `B424BE150A8E7D78`
 
 **Pros:** Can be toggled at runtime and is useful for testing.  
-**Cons:** Requires EdiZon and should be enabled after the game has loaded.
+**Cons:** Requires EdiZon and is version-specific.
 
 ### EdiZon setup
 
@@ -69,12 +69,12 @@ In `override_config.ini`:
 cheat_enable_key=L
 ```
 
-The cheat should be enabled through EdiZon after Super Mario Odyssey has loaded.
+The cheat should be enabled through EdiZon after the game has loaded.
 
 Enabling this cheat during SMO's startup can cause a black screen or crash.
 
 ## Which method?
 
-Use the **exefs patch** for automatic use.
+Use the **exefs patch** for automatic use and no version-specific setup.
 
 Use the **EdiZon cheat** when you want to toggle the modification manually.
