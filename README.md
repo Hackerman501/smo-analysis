@@ -69,6 +69,10 @@ cheat_enable_key=L
 
 With this setup, cheats stay disabled by default and the cheat manager can be enabled with **L** when launching an application. Start SMO normally, let it load, then enable the Downthrow cheat through EdiZon.
 
+## Source
+
+The readable source for the v5 patch is available in [`source/`](./source/), including the ARM64 patch, Atmosphere `.pchtxt` definition and EdiZon cheat source.
+
 ## Compatibility
 
 - exeFS patch: not version-specific
