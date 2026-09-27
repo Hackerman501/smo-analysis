@@ -1,4 +1,4 @@
-# Super Mario Odyssey Pro Controller Downthrow
+# Super Mario Odyssey Pro Controller Downthrow :D
 
 A patch that enables Downthrows and Up-Down-Vaults with a Pro Controller in Super Mario Odyssey.
 
