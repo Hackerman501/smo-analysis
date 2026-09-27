@@ -18,7 +18,3 @@ The patch was tested on Super Mario Odyssey 1.3.0.
 
 Installation:
 `atmosphere/exefs_patches/ProControllerDownthrow/`
-
-I'll also provide an EdiZon version for people who prefer enabling/disabling the patch as a cheat.
-
-Credit to the Super Mario Odyssey reverse-engineering work that made it possible to identify the relevant motion-input functions.
