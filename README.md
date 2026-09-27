@@ -10,7 +10,10 @@ Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cann
 **[Download the latest release](https://github.com/Hackerman501/smo-downthrow-patch/releases/latest)**
 
 - **exeFS** — automatic, not version-specific
-- **EdiZon** — runtime toggle, currently for SMO 1.3.0
+- **EdiZon** — runtime toggle, currently for SMO 1.3.0 
+!!!The EdiZon Cheat option is really unstable ATM, crashes are expected!!!
+
+
 
 ## exeFS patch
 
