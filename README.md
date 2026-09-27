@@ -27,7 +27,7 @@ atmosphere/exefs_patches/ProControllerDownthrow/
 
 ## EdiZon cheat
 
-###!!!The EdiZon Cheat option is really unstable ATM, crashes are expected!!!
+!!!The EdiZon Cheat option is really unstable ATM, crashes are expected!!!
 
 For Super Mario Odyssey 1.3.0:
 
