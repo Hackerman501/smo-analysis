@@ -33,9 +33,9 @@ This makes the existing motion detector used by other motion throws handle the D
 
 ## Files
 
-- `v5_downthrow.asm` — readable ARM64 patch source
-- `v5_downthrow.pchtxt` — Atmosphere IPS/pchtxt-style patch definition
-- `v5_downthrow_edizon.txt` — EdiZon cheat source
+- `downthrow.asm` — readable ARM64 patch source
+- `downthrow.pchtxt` — Atmosphere IPS/pchtxt-style patch definition
+- `downthrow_edizon.txt` — EdiZon cheat source
 
 ## Important note
 
