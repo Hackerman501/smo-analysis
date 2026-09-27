@@ -1,0 +1,10 @@
+@nsobid-B424BE150A8E7D78701CBE7A439D9EBF
+@flag print_values
+@flag offset_shift 0x100
+@enabled
+
+; Pro Controller Downthrow v5
+; 0x003EFE94: b 0x005D6140
+003EFE94 140798AB
+
+@stop
