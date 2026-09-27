@@ -12,9 +12,9 @@ With the patch enabled, you can:
 
 Known side effect: some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
-## exefs patch
+## exeFS patch
 
-The exefs patch is provided as a `.ips` file.
+The exeFS patch is provided as a `.ips` file.
 
 Install it to:
 
@@ -75,6 +75,6 @@ Enabling this cheat during SMO's startup can cause a black screen or crash.
 
 ## Which method?
 
-Use the **exefs patch** for automatic use and no version-specific setup.
+Use the **exeFS patch** for automatic use and no version-specific setup.
 
 Use the **EdiZon cheat** when you want to toggle the modification manually.
