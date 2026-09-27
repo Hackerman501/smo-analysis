@@ -1,6 +1,6 @@
 # Super Mario Odyssey Pro Controller Downthrow
 
-I made a cheat that enables Downthrows with a Pro Controller in Super Mario Odyssey 1.3.0.
+I made a patch that enables Downthrows with a Pro Controller in Super Mario Odyssey 1.3.0.
 
 Normally, the Pro Controller can perform the regular motion throws, but the Downthrow used for things like Up-Down-Vaults does not work because Odyssey routes that particular action through a Double-Hand motion check.
 
