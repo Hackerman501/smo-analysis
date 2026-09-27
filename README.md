@@ -2,8 +2,6 @@
 
 A patch that enables Downthrows and Up-Down-Vaults with a Pro Controller in Super Mario Odyssey.
 
-[![Latest Release](https://img.shields.io/github/v/release/Hackerman501/smo-downthrow-patch)](https://github.com/Hackerman501/smo-downthrow-patch/releases)
-
 
 Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects that trigger to the same single/any-hand swing detector used by other motion throws.
 
