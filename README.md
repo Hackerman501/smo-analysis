@@ -71,7 +71,7 @@ With this setup, cheats stay disabled by default and the cheat manager can be en
 
 ## Source
 
-The readable source for the v5 patch is available in [`source/`](./source/), including the ARM64 patch, Atmosphere `.pchtxt` definition and EdiZon cheat source.
+The readable source for the patch is available in [`source/`](./source/), including the ARM64 patch, Atmosphere `.pchtxt` definition and EdiZon cheat source.
 
 ## Compatibility
 
