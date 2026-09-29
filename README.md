@@ -51,14 +51,14 @@ The latest release includes the EdiZon cheat in the correct folder structure, so
 
 Edit these files directly:
 
-In `sd:\\atmosphere\config_templates\system_settings.ini`:
+In `sd:\\atmosphere\config\system_settings.ini`:
 
 ```ini
 [atmosphere]
 dmnt_cheats_enabled_by_default = u8!0x0
 ```
 
-In `sd:\\atmosphere\config_templates\override_config.ini`:
+In `sd:\\atmosphere\config\override_config.ini`:
 
 ```ini
 [default_config]
