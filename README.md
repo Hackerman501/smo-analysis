@@ -61,7 +61,7 @@ In `system_settings.ini`:
 ```ini
 [atmosphere]
 dmnt_cheats_enabled_by_default = u8!0x0
-dmnt_always_save_cheat_toggles = u8!0x0
+dmnt_always_save_cheat_toggles = u8!0x1
 ```
 
 In `override_config.ini`:
