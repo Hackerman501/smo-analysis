@@ -31,6 +31,21 @@ Patched:
 
 This makes the existing motion detector used by other motion throws handle the Downthrow trigger as well.
 
+## EdiZon cheat
+
+The EdiZon source uses a conditional write so the patch is only applied when the original instruction is still present:
+
+```text
+[SMO Pro Controller Downthrow]
+14050000 003EFE94 140798C7
+04000000 003EFE94 140798AB
+20000000
+```
+
+The first line checks whether `0x003EFE94` still contains the original value `140798C7`. Only then is `140798AB` written. The final `20000000` ends the conditional block.
+
+This prevents the cheat from overwriting that location when it already contains a different value.
+
 ## Files
 
 - `downthrow.asm` — readable ARM64 patch source
