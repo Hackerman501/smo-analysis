@@ -26,7 +26,7 @@ atmosphere/exefs_patches/ProControllerDownthrow/
 **Pros:** Always active, no EdiZon required, not version-specific.  
 **Cons:** Always active while installed.
 
-## EdiZon cheat !!!Highly experimental, crashes are expected!!!
+## EdiZon cheat !!!Highly experimental, crashes are expected!!! Please use the exeFS ips version
 
 For Super Mario Odyssey 1.3.0:
 
