@@ -2,17 +2,14 @@
 
 A patch that enables Downthrows and Up-Down-Vaults with a Pro Controller in Super Mario Odyssey.
 
-Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects that trigger to the same single/any-hand swing detector used by other motion throws.
-
-It currently only works on 1.3.0
-Support for other versions will be added
+Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. The patch redirects that trigger to the existing any-hand swing detector used by other motion throws.
 
 ## Downloads
 
 **[Download the latest release](https://github.com/Hackerman501/smo-downthrow-patch/releases/latest)**
 
 - **exeFS** — automatic
-- **EdiZon** — runtime toggle
+- **EdiZon** — runtime toggle for SMO 1.3.0
 
 > **Warning:** The EdiZon cheat is experimental and can cause crashes or a black screen. Enable it only after the game has fully loaded.
 
@@ -26,10 +23,19 @@ Install to:
 atmosphere/exefs_patches/ProControllerDownthrow/
 ```
 
-**Pros:** Always active, no EdiZon required, not version-specific.  
-**Cons:** Always active while installed.
+The patch is automatic once installed. The file is selected by Atmosphère using the game Build ID, so each supported game version has its own IPS file.
 
-## EdiZon cheat !!!Highly experimental, crashes are expected!!! Please use the exeFS ips version
+### Supported versions
+
+| Game version | Build ID | exeFS IPS |
+|---|---|---|
+| 1.0.0 | `3CA12DFAAF9C82DA064D1698DF79CDA1` | included |
+| 1.3.0 | `B424BE150A8E7D78701CBE7A439D9EBF` | included |
+
+**Pros:** Always active, no EdiZon required.
+**Cons:** Always active while the patch is installed.
+
+## EdiZon cheat
 
 For Super Mario Odyssey 1.3.0:
 
@@ -38,52 +44,35 @@ For Super Mario Odyssey 1.3.0:
 04000000 003EFE94 140798AB
 ```
 
-Build ID: `B424BE150A8E7D78`
-
-### Installation
+Build ID: `B424BE150A8E7D78701CBE7A439D9EBF`
 
 Place the cheat file at:
 
 ```text
-atmosphere/contents/0100000000010000/cheats/B424BE150A8E7D78.txt
+atmosphere/contents/0100000000010000/cheats/B424BE150A8E7D78701CBE7A439D9EBF.txt
 ```
 
-The latest release includes the EdiZon cheat in the correct folder structure, so you can also extract the EdiZon ZIP to the root of your SD card.
+The EdiZon cheat is currently only provided for 1.3.0. Use the exeFS IPS patch for 1.0.0.
 
 ### EdiZon setup
 
-Edit these files directly:
+The cheat can be toggled through EdiZon after the game has loaded.
 
-In `sd:\\atmosphere\config\system_settings.ini`:
-
-```ini
-[atmosphere]
-dmnt_cheats_enabled_by_default = u8!0x0
-dmnt_always_save_cheat_toggles = u8!0x0
-```
-
-In `sd:\\atmosphere\config\override_config.ini`:
-
-```ini
-[default_config]
-cheat_enable_key=L
-```
-
-With this setup, cheats stay disabled by default and the cheat manager can be enabled with **L** when launching an application. Start SMO normally, let it load, then enable the Downthrow cheat through EdiZon.
+The experimental EdiZon version can crash or black-screen when enabled too early, so the exeFS IPS patch is recommended for normal use.
 
 ## Source
 
-The readable source for the patch is available in [`source/`](./source/), including the ARM64 patch, Atmosphere `.pchtxt` definition and EdiZon cheat source.
+The readable source for the patches is available in [`source/`](./source/), including the ARM64 patch sources, Atmosphère `.pchtxt` definitions and EdiZon cheat source.
 
 ## Compatibility
 
-- exeFS patch: SMO 1.3.0
-- EdiZon cheat: Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78`
+- exeFS patch: Super Mario Odyssey 1.0.0 and 1.3.0
+- EdiZon cheat: Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78701CBE7A439D9EBF`
 
 ## Known issues
 
-- The EdiZon cheat is experimental and can cause crashes or a black screen, especially if enabled before the game has fully loaded.
 - Some Dual Joy-Con motion actions can also work with a single Joy-Con.
+- The EdiZon cheat is experimental and can cause crashes or a black screen, especially if enabled before the game has fully loaded.
 
 ## Which method?
 
