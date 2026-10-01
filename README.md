@@ -10,8 +10,6 @@ Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cann
 
 The current release contains the exeFS IPS patches for Super Mario Odyssey 1.0.0 and 1.3.0.
 
-## exeFS patch
-
 Install the contents of the release to the root of the SD card.
 
 The patch is installed at:
@@ -56,14 +54,6 @@ source/
 - Super Mario Odyssey 1.0.0
 - Super Mario Odyssey 1.3.0
 
-No EdiZon cheat is included.
-
 ## Known issues
 
 Some Dual Joy-Con motion actions can also work with a single Joy-Con.
-
-## Which method?
-
-Use the **exeFS patch** for automatic use.
-
-Tested on Super Mario Odyssey 1.3.0.
