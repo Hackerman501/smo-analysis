@@ -27,7 +27,7 @@ Files:
 
 - `downthrow_1.0.0.asm`
 - `downthrow_1.0.0.pchtxt`
-- `atmosphere/exefs_patches/ProControllerDownthrow/3CA12DFAAF9C82DA064D1698DF79CDA1.ips`
+- `atmosphere/exefs_patches/ProControllerDownthrow_1.0.0/3CA12DFAAF9C82DA064D1698DF79CDA1.ips`
 
 ## Version 1.3.0
 
@@ -49,12 +49,21 @@ Files:
 
 - `downthrow_1.3.0.asm`
 - `downthrow_1.3.0.pchtxt`
-- `atmosphere/exefs_patches/ProControllerDownthrow/B424BE150A8E7D78701CBE7A439D9EBF.ips`
+- `atmosphere/exefs_patches/ProControllerDownthrow_1.3.0/B424BE150A8E7D78701CBE7A439D9EBF.ips`
 
 ## IPS files
 
-The IPS files are stored under `source/atmosphere/` so the complete source/package layout is kept together.
+The release ZIP keeps the two game versions in separate Atmosphère patch folders:
 
-For installation, copy that `atmosphere/` directory to the root of the SD card.
+```text
+atmosphere/
+└── exefs_patches/
+    ├── ProControllerDownthrow_1.0.0/
+    │   └── 3CA12DFAAF9C82DA064D1698DF79CDA1.ips
+    └── ProControllerDownthrow_1.3.0/
+        └── B424BE150A8E7D78701CBE7A439D9EBF.ips
+```
+
+For installation, copy the `atmosphere/` directory from the release ZIP to the root of the SD card.
 
 No EdiZon cheat is included.
