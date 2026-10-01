@@ -12,22 +12,24 @@ The current release contains the exeFS IPS patches for Super Mario Odyssey 1.0.0
 
 Install the contents of the release to the root of the SD card.
 
-The patch is installed at:
+The release contains separate patch folders for each supported game version:
 
 ```text
 sd:/atmosphere/exefs_patches/
+├── ProControllerDownthrow_1.0.0/
+│   └── 3CA12DFAAF9C82DA064D1698DF79CDA1.ips
+└── ProControllerDownthrow_1.3.0/
+    └── B424BE150A8E7D78701CBE7A439D9EBF.ips
 ```
 
-Atmosphère selects the correct IPS file by Build ID.
+Only the folder matching your installed game version needs to be installed.
 
 ### Supported versions
 
-| Game version | Build ID |
-|---|---|
-| 1.0.0 | `3CA12DFAAF9C82DA064D1698DF79CDA1` |
-| 1.3.0 | `B424BE150A8E7D78701CBE7A439D9EBF` |
-
-```
+| Game version | Build ID | Patch folder |
+|---|---|---|
+| 1.0.0 | `3CA12DFAAF9C82DA064D1698DF79CDA1` | `ProControllerDownthrow_1.0.0` |
+| 1.3.0 | `B424BE150A8E7D78701CBE7A439D9EBF` | `ProControllerDownthrow_1.3.0` |
 
 ## Compatibility
 
