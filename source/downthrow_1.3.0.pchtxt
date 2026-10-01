@@ -3,8 +3,8 @@
 @flag offset_shift 0x100
 @enabled
 
-; Pro Controller Downthrow
-; 0x003EFE94: b 0x005D6140
+; Pro Controller Downthrow - Super Mario Odyssey 1.3.0
+; 0x003EFE94: b isSwingAnyHand
 003EFE94 140798AB
 
 @stop
