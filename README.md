@@ -4,12 +4,15 @@ A patch that enables Downthrows and Up-Down-Vaults with a Pro Controller in Supe
 
 Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cannot provide. This patch redirects that trigger to the same single/any-hand swing detector used by other motion throws.
 
+It currently only works on 1.3.0
+Support for other versions will be added
+
 ## Downloads
 
 **[Download the latest release](https://github.com/Hackerman501/smo-downthrow-patch/releases/latest)**
 
-- **exeFS** — automatic, not version-specific
-- **EdiZon** — runtime toggle, currently for SMO 1.3.0
+- **exeFS** — automatic
+- **EdiZon** — runtime toggle
 
 > **Warning:** The EdiZon cheat is experimental and can cause crashes or a black screen. Enable it only after the game has fully loaded.
 
@@ -74,7 +77,7 @@ The readable source for the patch is available in [`source/`](./source/), includ
 
 ## Compatibility
 
-- exeFS patch: not version-specific
+- exeFS patch: SMO 1.3.0
 - EdiZon cheat: Super Mario Odyssey 1.3.0 / Build ID `B424BE150A8E7D78`
 
 ## Known issues
