@@ -15,7 +15,7 @@ Install the contents of the release to the root of the SD card.
 The patch is installed at:
 
 ```text
-atmosphere/exefs_patches/ProControllerDownthrow/
+sd:/atmosphere/exefs_patches/
 ```
 
 Atmosphère selects the correct IPS file by Build ID.
@@ -27,26 +27,6 @@ Atmosphère selects the correct IPS file by Build ID.
 | 1.0.0 | `3CA12DFAAF9C82DA064D1698DF79CDA1` |
 | 1.3.0 | `B424BE150A8E7D78701CBE7A439D9EBF` |
 
-**Pros:** Always active, no runtime cheat manager required.
-**Cons:** Always active while the patch is installed.
-
-## Source
-
-The human-readable patch sources and the installable IPS files are kept under [`source/`](./source/).
-
-Each game version has its own versioned source filename:
-
-```text
-source/
-├── downthrow_1.0.0.asm
-├── downthrow_1.0.0.pchtxt
-├── downthrow_1.3.0.asm
-├── downthrow_1.3.0.pchtxt
-└── atmosphere/
-    └── exefs_patches/
-        └── ProControllerDownthrow/
-            ├── 3CA12DFAAF9C82DA064D1698DF79CDA1.ips
-            └── B424BE150A8E7D78701CBE7A439D9EBF.ips
 ```
 
 ## Compatibility
