@@ -23,7 +23,9 @@ Some Dual Joy-Con motion actions can also work with a single Joy-Con.
 | Game Version | Supported |
 |--------------|-----------|
 | 1.0.0        | Yes       |
-| 1.2.0        | Yes       |
+| 1.0.1        | No        |
+| 1.1.0        | No        |
+| 1.2.0        | No        |
 | 1.3.0        | Yes       |
 | 1.4.0        | Yes       |
 | 1.4.1        | Yes       |
