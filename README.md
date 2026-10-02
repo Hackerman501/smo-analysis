@@ -22,15 +22,6 @@ sd:/atmosphere/exefs_patches/
 
 The 1.3.0 patch can also be used for game versions 1.4.0 and 1.4.1 because the patched code location and instruction are unchanged.
 
-Build IDs:
-
-- 1.0.0: `3CA12DFAAF9C82DA064D1698DF79CDA1`
-- 1.3.0: `B424BE150A8E7D78701CBE7A439D9EBF`
-- 1.4.0: `6265F94D606242CE`
-- 1.4.1: `965EAB9CEB8EB867`
-
-Only the patch matching your installed game version needs to be installed. For 1.4.0 and 1.4.1, use the same patch data as 1.3.0 under the corresponding Build ID.
-
 ## Known issues
 
 Some Dual Joy-Con motion actions can also work with a single Joy-Con.
