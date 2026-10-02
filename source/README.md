@@ -28,7 +28,6 @@ Patched:
 ### Version 1.3.0
 
 - Build ID: `B424BE150A8E7D78701CBE7A439D9EBF`
-- Packaged IPS: `B424BE150A8E7D78701CBE7A439D9EBF.ips`
 
 Original:
 
@@ -45,24 +44,18 @@ Patched:
 ### Version 1.4.0
 
 - Build ID: `6265F94D606242CE`
-- Uses the same patch as 1.3.0.
-- Packaged IPS: `B424BE150A8E7D78701CBE7A439D9EBF.ips`
 
 ```asm
-0x003EFE94: 140798AB    // b 0x005D6140
+0x003EFE94: 140798AB
 ```
 
 ### Version 1.4.1
 
 - Build ID: `965EAB9CEB8EB867`
-- Uses the same patch as 1.3.0.
-- Packaged IPS: `B424BE150A8E7D78701CBE7A439D9EBF.ips`
 
 ```asm
-0x003EFE94: 140798AB    // b 0x005D6140
+0x003EFE94: 140798AB
 ```
-
-The 1.4.0 and 1.4.1 versions do not have separate IPS files. They reuse the same `B424BE150A8E7D78701CBE7A439D9EBF.ips` file as 1.3.0.
 
 ## Unsupported versions
 
@@ -95,8 +88,8 @@ atmosphere/exefs_patches/ProControllerDownthrow/
 
 Files:
 
-- `3CA12DFAAF9C82DA064D1698DF79CDA1.ips` — Super Mario Odyssey 1.0.0
-- `B424BE150A8E7D78701CBE7A439D9EBF.ips` — Super Mario Odyssey 1.3.0, 1.4.0, and 1.4.1
+- `3CA12DFAAF9C82DA064D1698DF79CDA1.ips`
+- `B424BE150A8E7D78701CBE7A439D9EBF.ips`
 
 ## Installation structure
 
