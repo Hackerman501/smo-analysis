@@ -17,3 +17,13 @@ Atmosphère will automatically select the correct IPS patch based on the game's 
 ## Known issues
 
 Some Dual Joy-Con motion actions can also work with a single Joy-Con.
+
+## Compatibility
+
+| Game Version | Supported |
+|--------------|-----------|
+| 1.0.0        | Yes       |
+| 1.2.0        | Yes       |
+| 1.3.0        | Yes       |
+| 1.4.0        | Yes       |
+| 1.4.1        | Yes       |
