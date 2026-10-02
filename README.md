@@ -6,22 +6,19 @@ Normally, Downthrow uses a Double-Hand motion check that the Pro Controller cann
 
 **[Download the latest release](https://github.com/Hackerman501/smo-downthrow-patch/releases/latest)**
 
-The current release uses version-specific Atmosphère IPS patch folders for all supported game versions.
+The current release supports Super Mario Odyssey 1.0.0, 1.3.0, 1.4.0, and 1.4.1.
 
 ## Installation
 
-Extract the `atmosphere` folder from the ZIP to the root of your Switch SD card.
+Extract the ZIP to the root of your Switch SD card.
 
-Use the patch folder matching your installed game version:
+The release contains one common Atmosphère patch folder:
 
 ```text
-sd:/atmosphere/exefs_patches/ProControllerDownthrow_1.0.0/
-sd:/atmosphere/exefs_patches/ProControllerDownthrow_1.3.0/
-sd:/atmosphere/exefs_patches/ProControllerDownthrow_1.4.0/
-sd:/atmosphere/exefs_patches/ProControllerDownthrow_1.4.1/
+sd:/atmosphere/exefs_patches/ProControllerDownthrow/
 ```
 
-Each folder contains the IPS file for that version's Build ID.
+All supported version-specific IPS files are stored in that folder. Atmosphère selects the correct patch by the Build ID of the game's executable, so the ZIP only needs to be extracted once.
 
 ## Known issues
 
@@ -29,18 +26,18 @@ Some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
 ## Compatibility
 
-| Game Version | Build ID | Supported |
-|--------------|----------|-----------|
-| 1.0.0        | `3CA12DFAAF9C82DA064D1698DF79CDA1` | Yes |
-| 1.0.1        | — | No |
-| 1.1.0        | — | No |
-| 1.2.0        | — | No |
-| 1.3.0        | `B424BE150A8E7D78701CBE7A439D9EBF` | Yes |
-| 1.4.0        | `6265F94D606242CE` | Yes |
-| 1.4.1        | `965EAB9CEB8EB867` | Yes |
+| Game Version | Supported |
+|--------------|-----------|
+| 1.0.0        | Yes       |
+| 1.0.1        | No        |
+| 1.1.0        | No        |
+| 1.2.0        | No        |
+| 1.3.0        | Yes       |
+| 1.4.0        | Yes       |
+| 1.4.1        | Yes       |
 
 Versions not listed as supported are not supported by this patch.
 
-The 1.4.0 and 1.4.1 patches use the same patch instruction as 1.3.0, but each version has its own Build ID-specific IPS file.
+The 1.4.0 and 1.4.1 patches use the same patch data as 1.3.0, but each version has its own Build ID-specific IPS filename.
 
 No EdiZon cheat is included.
