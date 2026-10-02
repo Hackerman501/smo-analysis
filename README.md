@@ -12,13 +12,9 @@ The current release supports Super Mario Odyssey 1.0.0, 1.3.0, 1.4.0, and 1.4.1.
 
 Extract the ZIP to the root of your Switch SD card.
 
-The release contains one common Atmosphère patch folder:
-
 ```text
 sd:/atmosphere/exefs_patches/ProControllerDownthrow/
 ```
-
-The ZIP only needs to be extracted once.
 
 ## Known issues
 
@@ -35,7 +31,3 @@ Some Dual Joy-Con motion actions can also work with a single Joy-Con.
 | 1.3.0        | Yes       |
 | 1.4.0        | Yes       |
 | 1.4.1        | Yes       |
-
-Versions not listed as supported are not supported by this patch.
-
-No EdiZon cheat is included.
