@@ -18,7 +18,7 @@ The release contains one common Atmosphère patch folder:
 sd:/atmosphere/exefs_patches/ProControllerDownthrow/
 ```
 
-All supported version-specific IPS files are stored in that folder. Atmosphère selects the correct patch by the Build ID of the game's executable, so the ZIP only needs to be extracted once.
+The folder contains two IPS files. The 1.0.0 patch is provided separately, while the 1.3.0 patch is also used for 1.4.0 and 1.4.1. The ZIP only needs to be extracted once.
 
 ## Known issues
 
@@ -38,6 +38,6 @@ Some Dual Joy-Con motion actions can also work with a single Joy-Con.
 
 Versions not listed as supported are not supported by this patch.
 
-The 1.4.0 and 1.4.1 patches use the same patch data as 1.3.0, but each version has its own Build ID-specific IPS filename.
+The 1.4.0 and 1.4.1 versions use the same patch as 1.3.0. No separate IPS files are required for those versions.
 
 No EdiZon cheat is included.
