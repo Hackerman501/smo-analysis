@@ -1,0 +1,10 @@
+@nsobid-6265F94D606242CE
+@flag print_values
+@flag offset_shift 0x100
+@enabled
+
+; Pro Controller Downthrow - Super Mario Odyssey 1.4.0
+; Same patch data as 1.3.0.
+003EFE94 140798AB
+
+@stop
